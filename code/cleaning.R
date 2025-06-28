@@ -6,11 +6,8 @@
 
 # Load necessary libraries
 pacman::p_load(
-  dplyr,
-  tidyr,
-  stringr,
-  lubridate,
-  readr,
+  tidyverse,
+  data.table,
   skimr,
   janitor
 )
@@ -28,25 +25,31 @@ r5_yc <- "data_raw/r5_files/tab/r5_yc/"
 ## Individual level data for children from the older cohort
 r1_oc_pe <- read_tsv(file = paste0(r1_oc, "peru/pechildlevel8yrold.tab"),
                      col_names = TRUE,
-                     col_types = cols(.default = "?"))
+                     col_types = cols(.default = "?")) |>
+  as.data.table()
 
 r1_oc_vn <- read_tsv(file = paste0(r1_oc, "vietnam/vnchildlevel8yrold.tab"),
                      col_names = TRUE,
-                     col_types = cols(.default = "?"))
+                     col_types = cols(.default = "?")) |>
+  as.data.table()
 
 r1_oc_in <- read_tsv(file = paste0(r1_oc, "india/inchildlevel8yrold.tab"),
                      col_names = TRUE,
-                     col_types = cols(.default = "?"))
+                     col_types = cols(.default = "?")) |>
+  as.data.table()
 
 ## Individual level data for children from the younger cohort
 r3_yc_pe <- read_tsv(file = paste0(r3_yc, "peru/pe_yc_childlevel.tab"),
                      col_names = TRUE,
-                     col_types = cols(.default = "?"))
+                     col_types = cols(.default = "?")) |>
+  as.data.table()
 
 r3_yc_vn <- read_tsv(file = paste0(r3_yc, "vietnam/vn_yc_childlevel.tab"),
                      col_names = TRUE,
-                     col_types = cols(.default = "?"))
+                     col_types = cols(.default = "?")) |>
+  as.data.table()
 
 r3_yc_in <- read_tsv(file = paste0(r3_yc, "india/in_yc_childlevel.tab"),
                      col_names = TRUE,
-                     col_types = cols(.default = "?"))
+                     col_types = cols(.default = "?")) |>
+  as.data.table()
