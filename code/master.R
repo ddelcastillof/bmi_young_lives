@@ -4,6 +4,9 @@
 # Date: `r Sys.Date()`
 # ---
 
+# R options
+options(print.max = 999999)
+
 # Sourcing scripts (placeholders)
 source("code/01_load_data.R")
 source("code/02_clean_data.R")
